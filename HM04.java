@@ -7,10 +7,10 @@ import java.util.Scanner;
 public class HM04 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Integer a = input.nextInt();
-        Integer b = input.nextInt();
-        Deque<Integer> d = IntegerToDeque(a);
-        Deque<Integer> q = IntegerToDeque(b);
+        System.out.println("Enter first number: ");
+        Deque<Integer> d = IntegerToDeque(input.nextInt());
+        System.out.println("Enter second number: ");
+        Deque<Integer> q = IntegerToDeque(input.nextInt());
         // sum(d, q);
         prod(d, q);
         input.close();
@@ -22,7 +22,7 @@ public class HM04 {
                 firstDeq.add(num % 10);
                 num = num / 10;
             }
-        System.out.println(firstDeq);
+            
         return firstDeq;
     }
     
@@ -54,7 +54,12 @@ public class HM04 {
             res.add(sm % 10);
             sm = sm / 10;
         }
-        System.out.println(res);
+        System.out.print("Answer: ");
+        for (int i = res.size()-1; i >=0 ; i--) {
+            System.out.print(res.get(i)); 
+        }
+
+        System.out.println();
     }
 
     public static void prod(Deque<Integer> first, Deque<Integer> second) {
@@ -75,6 +80,11 @@ public class HM04 {
             res.add(product % 10);
             product = product / 10;
         }
-        System.out.println(res);
+        System.out.print("Answer: ");
+        for (int i = res.size()-1; i >=0 ; i--) {
+            System.out.print(res.get(i)); 
+        }
+
+        System.out.println();
     }
 }
